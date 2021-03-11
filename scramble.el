@@ -21,6 +21,9 @@
 (defvar scramble-string ""
   "Current set of movements.")
 
+(defvar scramble-new-move ""
+  "New move.")
+
 (defvar scramble-prev-move ""
   "Previous move.")
 
@@ -35,6 +38,24 @@
   "Return random movement of LIST."
   (nth (random (1- (1+ (length list)))) list))
 
-(provide 'scramble)
+(defun scramble-generate-string (counter)
+  "Generate random states for Rubik's cubes puzzles.  Argument COUNTER."
+  (if (not (eq counter 0))
+      (progn
+        (setq scramble-new-move (scramble-random-move scramble-moves-list))
+        (if (string= scramble-new-move scramble-prev-move)
+            (scramble-generate-string counter)
+          (progn
+            (setq scramble-prev-move scramble-new-move)
+            (setq scramble-string (concat scramble-string " " scramble-new-move))
+            (scramble-generate-string (- counter 1)))))))
 
+(defun scramble-generate ()
+  "Show random states for Rubik's cubes puzzles."
+  (interactive)
+  (setq scramble-string "")
+  (scramble-generate-string (scramble-length))
+  (message scramble-string))
+
+(provide 'scramble)
 ;;; scramble.el ends here
