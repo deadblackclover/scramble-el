@@ -57,5 +57,7 @@
   (scramble-generate-string (scramble-length))
   (message scramble-string))
 
+(global-set-key (kbd "C-x C-m") 'motivation)
+
 (provide 'scramble)
 ;;; scramble.el ends here
