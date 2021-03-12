@@ -12,4 +12,4 @@ Add scramble-el to your ~load-path~ and require. Something like:
 
 * Usage
 
-Type ~M-x scramble-generate~ to get motivating message. Or type ~C-x C-s~ to call the same function.
+Type ~M-x scramble-generate~ to get random states for Rubik's cubes puzzles. Or type ~C-x C-s~ to call the same function.
