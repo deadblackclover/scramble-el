@@ -1,0 +1,15 @@
+# scramble-el
+Generate random states for Rubik's cubes puzzles
+
+* Install
+
+Add scramble-el to your ~load-path~ and require. Something like:
+
+#+BEGIN_SRC emacs-lisp
+  (add-to-list 'load-path "path/to/scramble-el/")
+  (require 'scramble)
+#+END_SRC
+
+* Usage
+
+Type ~M-x scramble-generate~ to get motivating message. Or type ~C-x C-s~ to call the same function.
