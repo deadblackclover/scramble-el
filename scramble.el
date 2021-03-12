@@ -57,7 +57,7 @@
   (scramble-generate-string (scramble-length))
   (message scramble-string))
 
-(global-set-key (kbd "C-x C-m") 'scramble-generate)
+(global-set-key (kbd "C-x C-s") 'scramble-generate)
 
 (provide 'scramble)
 ;;; scramble.el ends here
